@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+function init () {
+    // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const promptUser = () => {
-    return inquirer.prompt ([
+ inquirer.prompt ([
         {
             type: "input",
             message: "What would you like to make the title for your project?",
@@ -13,7 +13,7 @@ const promptUser = () => {
                 if (titleInput) {
                   return true;
                 } else {
-                  console.log('Please enter your name!');
+                  console.log('Please enter a valid project title');
                   return false;
                 }
               }
@@ -37,6 +37,7 @@ const promptUser = () => {
         {
             type: "checkbox",
             message: "What license did you use for this repo?",
+            choices: ["GNU General Public License 2.0", "MIT", "Apache License 2.0", "GNU General Public License 3.0"],
             name: "license",
         },
         {
@@ -53,11 +54,27 @@ const promptUser = () => {
             type: "input",
             message: "What is your Github username",
             name: "githubuser",
+            validate: gitInput => {
+                if (gitInput) {
+                  return true;
+                } else {
+                  console.log('Please enter a valid Github username');
+                  return false;
+                }
+              }
         },
         {
             type: "input",
             message: "What email addressed can be used to answer questions from users and potential contributors?",
             name: "email",
+            validate: emailInput => {
+                if (emailInput) {
+                  return true;
+                } else {
+                  console.log('Please enter a valid email!');
+                  return false;
+                }
+              }
         },
     ])
    
@@ -66,8 +83,9 @@ const promptUser = () => {
 // TODO: Create a function to write README file
 
 
-// TODO: Create a function to initialize app
-function init() {}
+
+
+
 
 // Function call to initialize app
 init();
