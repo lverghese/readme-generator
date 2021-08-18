@@ -17,6 +17,8 @@ const licenseBadge = value => {
     return licenseLink
 };
 
+
+//function for generating the markdown for README
 const generateMark = value => {
     return `# ${value.title}
 
