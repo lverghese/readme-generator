@@ -1,5 +1,5 @@
 //function for the license badges
-const licenseBadge = value => {
+const licenseFancyBadge = value => {
     const whatLicense = value.license[0];
     let licenseLink = " "
     if (whatLicense === "GNU General Public License 2.0") {
@@ -20,41 +20,41 @@ const licenseBadge = value => {
 
 //function for generating the markdown for README
 const generateMark = value => {
-    return `# ${value.title}
+    return ` ${value.title}
 
-    ##Table of Contents:
-    1. [Description](#description)
-    2. [Installation](#install)
-    3. [Usage](#use)
-    4. [Contribution](#contribute)
-    5. [Tests](#test)
-    6. [License](#license)
-    7.[Github](#githubuser)
-    8. [E-mail](#email)
+## Table of Contents:
+1. [Description](#description)
+2. [Installation](#install)
+3. [Usage](#use)
+4. [Contribution](#contribute)
+5. [Tests](#test)
+6. [License](#license)
+7. [Github](#githubuser)
+8. [E-mail](#email)
 
-    ##Description
-    ${value.description}
+## 
+${value.description}
 
-    ## Installation
-    ${value.install}
+## Installation
+${value.install}
 
-    ## Usage
-    ${value.use}
+## Usage
+${value.use}
 
-    ## Contributing
-    ${value.contribute}
+## Contributing
+${value.contribute}
 
-    ## Tests
-    ${value.test}
+## Tests
+${value.test}
 
-    ## License
-    ${licenseBadge(value)}
+## License
+${licenseFancyBadge(value)}
 
-    ## Github
-    ${value.githubuser}
+## Github
+${value.githubuser}
 
-    ## Email
-    ${value.email}`
+## Email
+${value.email}`
 }
 
 module.exports = generateMark;

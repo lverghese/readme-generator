@@ -16,6 +16,8 @@ const init = () => {
             message: "What would you like to make the title for your project?",
             name: "title",
             validate: titleInput => {
+
+              //making sure they put a valid title
                 if (titleInput) {
                   return true;
                 } else {
@@ -74,6 +76,7 @@ const init = () => {
             message: "What email addressed can be used to answer questions from users and potential contributors?",
             name: "email",
             validate: emailInput => {
+              //making sure it is a valid email
                 if (emailInput) {
                   return true;
                 } else {
