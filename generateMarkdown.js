@@ -2,7 +2,7 @@
 const licenseBadge = value => {
     const whatLicense = value.license[0];
     let licenseLink = " "
-    if (licenseType === "GNU General Public License 2.0") {
+    if (whatLicense === "GNU General Public License 2.0") {
         licenseLink = `![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)`
     };
     if (whatLicense === "Apache License 2.0") {
