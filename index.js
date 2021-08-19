@@ -4,7 +4,7 @@ const fs = require('fs');
 const generateRead = require('./generateMarkdown.js');
 const path = require('path');
 
-
+//function for all of the user prompts
 const init = () => {
     // TODO: Include packages needed for this application
 
