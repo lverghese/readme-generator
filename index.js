@@ -1,15 +1,13 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// Changed name for testing purposes. You can revert back to generateRead. Make sure ALL instances of generateMarkdown is converted or things will break.
+
 const generateMarkdown = require('./generateMarkdown.js');
 
-// Removed const path = require('path');
-// Removed const init = () => { this function is at the bottom of the page. Alter it as you see fit.
 
 
-// TODO: Create an array of questions for user input
-// Removed inquirer.prompt not necessary but can be used
+
+//Array of questions for user input
 const questions = [
             {
             type: "input",
@@ -82,25 +80,23 @@ const questions = [
               }
         }
     ];
-    // Removed .then((response) => {
-    // Also removed   return fs.writeFileSync(path.join (process.cwd(), "README.md"), generateRead(response));
-    // Replaced with functions below. Alter as you see fit.
+    
 
     function writeToFile(fileName, value) {
       fs.writeFile(fileName, value, (err) => {
           if (err)
               throw err;
-          console.log('File generated!') //You can change this message. Ex: Your README is complete!
+          console.log('README File generated!') //You can change this message. Ex: Your README is complete!
       });
   }
 
     function init() {
-      inquirer.prompt(questions) //Your questions array
+      inquirer.prompt(questions) 
       .then(function (userResponse) {
           console.log(userResponse)
           writeToFile('README.md', generateMarkdown(userResponse));
       });
     }
 
-//Function call to initalize app. You don't need to touch this
+//Function call to initalize app.
 init();

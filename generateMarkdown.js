@@ -19,45 +19,44 @@ const licenseBadge = value => {
 
 
 //function for generating the markdown for README
-//You had this as const generateMark = value => {}
 function generateMarkdown(value) {
     return `# ${value.title}
 
-    ##Table of Contents:
-    1. [Description](#description)
-    2. [Installation](#install)
-    3. [Usage](#use)
-    4. [Contribution](#contribute)
-    5. [Tests](#test)
-    6. [License](#license)
-    7.[Github](#githubuser)
-    8. [E-mail](#email)
+## Table of Contents:
+1. [Description](#description)
+2. [Installation](#install)
+3. [Usage](#use)
+4. [Contribution](#contribute)
+5. [Tests](#test)
+6. [License](#license)
 
-    ##Description
-    ${value.description}
+7. [Github](#githubuser)
+8. [E-mail](#email)
 
-    ## Installation
-    ${value.install}
+## Description
+${value.description}
 
-    ## Usage
-    ${value.use}
+## Installation
+${value.install}
 
-    ## Contributing
-    ${value.contribute}
+## Usage
+${value.use}
 
-    ## Tests
-    ${value.test}
+## Contributing
+${value.contribute}
 
-    ## License
-    ${licenseBadge(value)}
+## Tests
+${value.test}
 
-    ## Github
-    ${value.githubuser}
+## License
+${licenseBadge(value)}
 
-    ## Email
-    ${value.email}`
+## Github
+${value.githubuser}
+
+## Email
+${value.email}`
 }
 
-module.exports = generateMarkdown; //You had this as generateMark.
+module.exports = generateMarkdown; 
 
-//Additional Notes: I liked how you did your licenses btw! Don't forget to run npm install inquirer in temrinal for the future!
