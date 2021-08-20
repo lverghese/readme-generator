@@ -1,23 +1,21 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateRead = require('./generateMarkdown.js');
-const path = require('path');
+// Changed name for testing purposes. You can revert back to generateRead. Make sure ALL instances of generateMarkdown is converted or things will break.
+const generateMarkdown = require('./generateMarkdown.js');
 
-//function for all of the user prompts
-const init = () => {
-    // TODO: Include packages needed for this application
+// Removed const path = require('path');
+// Removed const init = () => { this function is at the bottom of the page. Alter it as you see fit.
 
 
 // TODO: Create an array of questions for user input
- inquirer.prompt ([
-        {
+// Removed inquirer.prompt not necessary but can be used
+const questions = [
+            {
             type: "input",
             message: "What would you like to make the title for your project?",
             name: "title",
             validate: titleInput => {
-
-              //making sure they put a valid title
                 if (titleInput) {
                   return true;
                 } else {
@@ -25,43 +23,42 @@ const init = () => {
                   return false;
                 }
               }
-
         },
         {
-            type: "input",
-            message: "How would you describe your project?",
-            name: "description",
+            type: 'input',
+            message: 'How would you describe your project?',
+            name: 'description',
         },
         {
-            type: "input",
-            message: "How do you go about installing your application?",
-            name: "install",
+            type: 'input',
+            message: 'How do you go about installing your application?',
+            name: 'install',
         },
         {
-            type: "input",
-            message: "How do you use your application",
-            name: "use",
+            type: 'input',
+            message: 'How do you use your application',
+            name: 'use',
         },
         {
-            type: "checkbox",
-            message: "What license did you use for this repo?",
-            choices: ["GNU General Public License 2.0", "MIT", "Apache License 2.0", "GNU General Public License 3.0"],
-            name: "license",
+            type: 'checkbox',
+            message: 'What license did you use for this repo?',
+            choices: ['GNU General Public License 2.0', 'MIT', 'Apache License 2.0', 'GNU General Public License 3.0'],
+            name: 'license',
         },
         {
-            type: "input",
-            message: "How can others contribute to your project?",
-            name: "contribute",
+            type: 'input',
+            message: 'How can others contribute to your project?',
+            name: 'contribute',
         },
         {
-            type: "input",
-            message: "How do others update the tests for your project?",
-            name: "test",    
+            type: 'input',
+            message: 'How do others update the tests for your project?',
+            name: 'test',    
         },
         {
-            type: "input",
-            message: "What is your Github username",
-            name: "githubuser",
+            type: 'input',
+            message: 'What is your Github username',
+            name: 'githubuser',
             validate: gitInput => {
                 if (gitInput) {
                   return true;
@@ -72,11 +69,10 @@ const init = () => {
               }
         },
         {
-            type: "input",
-            message: "What email addressed can be used to answer questions from users and potential contributors?",
-            name: "email",
+            type: 'input',
+            message: 'What email addressed can be used to answer questions from users and potential contributors?',
+            name: 'email',
             validate: emailInput => {
-              //making sure it is a valid email
                 if (emailInput) {
                   return true;
                 } else {
@@ -84,22 +80,27 @@ const init = () => {
                   return false;
                 }
               }
-        },
-    ])
-    //taking all user answers and putting them in response
-    .then((response) => {
-      //writing the readme file and using the generateRead to call the markdown file and use the template
-      //using path to group the segments together
-      return fs.writeFileSync(path.join (process.cwd(), "README.md"), generateRead(response));
-    });
-}
+        }
+    ];
+    // Removed .then((response) => {
+    // Also removed   return fs.writeFileSync(path.join (process.cwd(), "README.md"), generateRead(response));
+    // Replaced with functions below. Alter as you see fit.
 
+    function writeToFile(fileName, value) {
+      fs.writeFile(fileName, value, (err) => {
+          if (err)
+              throw err;
+          console.log('File generated!') //You can change this message. Ex: Your README is complete!
+      });
+  }
 
+    function init() {
+      inquirer.prompt(questions) //Your questions array
+      .then(function (userResponse) {
+          console.log(userResponse)
+          writeToFile('README.md', generateMarkdown(userResponse));
+      });
+    }
 
-
-
-
-
-
-// Function call to initialize app
+//Function call to initalize app. You don't need to touch this
 init();

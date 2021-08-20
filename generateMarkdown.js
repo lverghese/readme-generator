@@ -1,5 +1,5 @@
 //function for the license badges
-const licenseFancyBadge = value => {
+const licenseBadge = value => {
     const whatLicense = value.license[0];
     let licenseLink = " "
     if (whatLicense === "GNU General Public License 2.0") {
@@ -19,42 +19,45 @@ const licenseFancyBadge = value => {
 
 
 //function for generating the markdown for README
-const generateMark = value => {
-    return ` ${value.title}
+//You had this as const generateMark = value => {}
+function generateMarkdown(value) {
+    return `# ${value.title}
 
-## Table of Contents:
-1. [Description](#description)
-2. [Installation](#install)
-3. [Usage](#use)
-4. [Contribution](#contribute)
-5. [Tests](#test)
-6. [License](#license)
-7. [Github](#githubuser)
-8. [E-mail](#email)
+    ##Table of Contents:
+    1. [Description](#description)
+    2. [Installation](#install)
+    3. [Usage](#use)
+    4. [Contribution](#contribute)
+    5. [Tests](#test)
+    6. [License](#license)
+    7.[Github](#githubuser)
+    8. [E-mail](#email)
 
-## 
-${value.description}
+    ##Description
+    ${value.description}
 
-## Installation
-${value.install}
+    ## Installation
+    ${value.install}
 
-## Usage
-${value.use}
+    ## Usage
+    ${value.use}
 
-## Contributing
-${value.contribute}
+    ## Contributing
+    ${value.contribute}
 
-## Tests
-${value.test}
+    ## Tests
+    ${value.test}
 
-## License
-${licenseFancyBadge(value)}
+    ## License
+    ${licenseBadge(value)}
 
-## Github
-${value.githubuser}
+    ## Github
+    ${value.githubuser}
 
-## Email
-${value.email}`
+    ## Email
+    ${value.email}`
 }
 
-module.exports = generateMark;
+module.exports = generateMarkdown; //You had this as generateMark.
+
+//Additional Notes: I liked how you did your licenses btw! Don't forget to run npm install inquirer in temrinal for the future!
