@@ -30,8 +30,7 @@ function generateMarkdown(value) {
 5. [Tests](#test)
 6. [License](#license)
 
-7. [Github](#githubuser)
-8. [E-mail](#email)
+7. [Questions](#questions)
 
 ## Description
 ${value.description}
@@ -51,12 +50,10 @@ ${value.test}
 ## License
 ${licenseBadge(value)}
 
-## Github
-${value.githubuser}
-
 ## Questions
-If you have any questions or need further assistance with this project do not hesitate to reach me at this email.
-${value.email}`
+If you have any questions or need further assistance with this project do not hesitate to reach me at this github profile and email.
+* Profile: ${value.githubuser}
+* Email: ${value.email}`
 }
 
 module.exports = generateMarkdown; 

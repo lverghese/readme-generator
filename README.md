@@ -8,8 +8,7 @@
 5. [Tests](#test)
 6. [License](#license)
 
-7. [Github](#githubuser)
-8. [E-mail](#email)
+7. [Questions](#questions)
 
 ## Description
 My project is an automated README.md generator that uses Node.js, Inquirer NPM, and FS (File System) to create README.md files automatically for the user following a set of questions in the terminal.
@@ -29,9 +28,7 @@ There is no further testing required.
 ## License
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Github
-lverghese
-
 ## Questions
-If you have any questions or need further assistance with this project do not hesitate to reach me at this email.
-loganverghese@gmail.com
+If you have any questions or need further assistance with this project do not hesitate to reach me at this github profile and email.
+* Profile: lverghese
+* Email: loganverghese@gmail.com
