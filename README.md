@@ -1,5 +1,8 @@
 # README.md Generator
 
+## License
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 ## Table of Contents:
 1. [Description](#description)
 2. [Installation](#install)
@@ -24,9 +27,6 @@ Others can contribute through pull requests or opening an issue.
 
 ## Tests
 There is no further testing required.
-
-## License
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Questions
 If you have any questions or need further assistance with this project do not hesitate to reach me at this github profile and email.
