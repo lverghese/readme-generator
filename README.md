@@ -32,3 +32,9 @@ There is no further testing required.
 If you have any questions or need further assistance with this project do not hesitate to reach me at this github profile and email.
 * Profile: lverghese
 * Email: loganverghese@gmail.com
+
+## Video Demo
+https://youtu.be/siibYSXaUUg
+
+## EXTRA
+This README was generated using the index.js file. The Video Demo section with the video link was added after the fact for grading purposes.
