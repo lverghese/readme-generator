@@ -54,7 +54,8 @@ ${licenseBadge(value)}
 ## Github
 ${value.githubuser}
 
-## Email
+## Questions
+If you have any questions or need further assistance with this project do not hesitate to reach me at this email.
 ${value.email}`
 }
 
