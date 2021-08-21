@@ -36,5 +36,8 @@ If you have any questions or need further assistance with this project do not he
 ## Video Demo
 https://youtu.be/siibYSXaUUg
 
+## Screenshot
+![READM-gen screenshot](https://user-images.githubusercontent.com/85531188/130308554-c6c387a3-7e81-455c-a137-fc9d55e8d19a.png)
+
 ## EXTRA
-This README was generated using the index.js file. The Video Demo section with the video link was added after the fact for grading purposes.
+This README was generated using the index.js file. The Video Demo and Screenshot section with the video link was added after the fact for grading purposes.
